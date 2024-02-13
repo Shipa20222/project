@@ -1,0 +1,575 @@
+﻿
+body {
+    background: #3d9adc38 0% 0% no-repeat padding-box;
+
+    font-family: Rubik;
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background: #5C82A1;
+    color: aliceblue;
+ width: 100%;
+
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* X-offset, Y-offset, Blur radius, Color */
+    margin-bottom: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    color: aliceblue;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  
+  nav li {
+    color: aliceblue;
+    margin: 0 10px;
+    
+  }
+  /* סגנון כללי לכפתור התפריט במצב מובייל */
+  #nav-button{
+    display: none; /* הצגת הכפתור רק במצב מובייל */
+    /* הוסף כאן סגנונות נוספים אם צריך, לדוגמה גודל כפתור */
+    background: none; /* הסרת רקע */
+    border: none; /* הסרת גבול */
+    padding: 0; /* הסרת ריווח פנימי */
+    margin: 0; /* הסרת ריווח חיצוני */
+  }
+  #nav-button img {
+    width: 30px; /* או כל גודל אחר שתרצה לתמונה */
+    height: auto; /* שמירה על פרופורציות התמונה */
+}
+  /* עיצוב כללי לרשימה עם שימוש ב-CSS Grid */
+.flex-container-subjects {
+    display: grid; /* שימוש ב-CSS Grid */
+    grid-template-columns: repeat(5, 1fr); /* יוצר חמישה עמודות בעלות אותו גודל */
+    gap: 10px; /* מרווח בין הפריטים */
+    justify-content: center; /* מרכז את הגריד באופן אופקי במידת הצורך */
+    align-content: center; /* מרכז את הגריד באופן אנכי במידת הצורך */
+    list-style: none; /* מסיר סימני רשימה */
+    padding: 0; /* מסיר רווחים פנימיים */
+    margin: auto; /* ממרכז את הרשימה באמצע העמוד */
+    row-gap: 20px;
+     max-width: 1000px;/* מגביל את רוחב הרשימה למקסימום ערך זה */
+  
+  }
+
+  .flex-container-nav
+{
+display: flax;
+gap: 20px;
+color: aliceblue;
+padding:15px;
+
+
+}
+
+.flex-container-nav a{
+    color: aliceblue;
+  text-decoration: none; /* מסיר את הקו התחתון */
+}
+
+.title-container{
+    display: flex;
+    text-align: right;
+    font: normal normal bold 35px/42px Rubik;
+    letter-spacing: 0px;
+    color: #5C82A1;
+    opacity: 1;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+}
+
+
+
+
+
+
+
+
+
+/* סגנון לגלריית החגים */
+#holidays {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* חמישה חגים בשורה */
+    grid-auto-rows: minmax(100px, auto); /* גובה אוטומטי עם מינימום */
+    gap: 10px; /* רווח בין הריבועים */
+    padding: 20px; /* רווח סביב הגלריה */
+}
+.holiday {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+}
+.holiday img {
+    max-width: 100%; /* התאמת גודל התמונה לריבוע */
+    border-radius: 10px;
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.7); /* הוספת צל קל לכל ריבוע */
+}
+.holiday img:hover{
+    box-shadow: 0 2px 5px rgba(0,0,0,0); /* הוספת צל קל לכל ריבוע */
+    cursor: pointer;
+}
+
+.holiday h2 {
+    display: none; /* הקטנת גודל הכותרת */
+}
+
+.holiday button {
+    background-color: #2a70bc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.holiday button:hover {
+    background-color: #39c8f4;
+}
+
+footer {
+   
+    color: #5C82A1;
+    font-weight:bolder;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+
+}
+footer:hover{
+    color: #336086;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block; /* או block, בהתאם לצורך */
+}
+
+.image-container img {
+    width: 100%; /* או כל רוחב אחר שנדרש */
+    display: block;
+}
+
+.read-more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    color: white; /* צבע הטקסט */
+    padding: 5px; /* ריווח סביב הטקסט */
+}
+
+
+
+.gallery-navigation {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.dot.active {
+    /* סגנונות עבור הנקודה הפעילה */
+    background-color: #717171; /* לדוגמה */
+}
+.dot:hover {
+    background-color: #717171;
+    cursor: pointer;
+}
+
+/* בלי זה לא יקבל את העיצוב*/
+Copy code
+.gallery-item {
+    display: flex !important; /* כפייה של השימוש ב-flexbox, גם אם JS מנסה לשנות זאת */
+    flex-direction: row-reverse; /* הטקסט בצד שמאל והתמונה בצד ימין */
+    align-items: center; /* מרכזים את הפריטים ורטיקלית */
+    justify-content: space-between; /* מרווח בין הטקסט לתמונה */
+    margin-bottom: 20px; /* מרווח בין פריטי הגלריה */
+}
+
+
+.text-content {
+    display: flex; /* שימוש ב-flexbox לטקסט */
+    flex-direction: column; /* מסדר את הטקסט בעמודה */
+    justify-content: center; /* מרכז את הטקסט ורטיקלית */
+    padding-right: 20px; /* מרווח בין הטקסט לתמונה */
+    max-width: 50%; /* מקסימום רוחב של 50% מהקונטיינר */
+}
+
+/* עיצוב הפופ-אפ כולל */
+.popup {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* רקע חצי שקוף */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* כדי שהפופ-אפ יופיע מעל כל דבר אחר */
+}
+
+/* עיצוב תוכן הפופ-אפ */
+.popup-content {
+   
+    background-color: #fff; /* רקע לבן */
+    border: 3px solid #3D99DC; /* מסגרת כחולה */
+    border-radius: 10px; /* פינות מעוגלות */
+    width: 100%;
+    max-width: 1009px;
+    padding: 20px; /* רווח פנימי */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל לפופ-אפ */
+    position: relative; /* כדי שנוכל למקם את כפתור הסגירה ביחס אליו */
+}
+
+/* עיצוב כפתור ה-X לסגירת הפופ-אפ */
+.close-btn {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px; /* גודל הכפתור */
+    cursor: pointer;
+    font: Rubik;
+    
+}
+
+
+
+
+/* עיצוב תוכן הפופ-אפ */
+#popup-text {
+    font-size: 18px;
+    color: #333;
+    line-height: 30px;
+    margin: 20px;
+    
+}
+
+#popup-text h3{
+    font-size: 22px;
+
+        color:#3F6FC6;
+    
+    
+}
+/* עיצוב תמונת הפופ-אפ */
+#popup-img {
+    width: 80%; /* רוחב מלא */
+    height: 80%; /* גובה אוטומטי */
+    border-radius: 10px; /* פינות מעוגלות */
+    margin-bottom: 20px; /* מרווח תחתון */
+}
+
+/* ברזולוציית מחשב */
+@media (min-width: 769px) {
+  
+  #footerpopup{
+    max-width: 206px;
+    padding: 59px;
+    margin: 205px 657px 0 0;
+  }
+    
+    #popup-img {
+        width: 80%;
+        max-width: 353px;
+        height: 80%;
+        margin: 20px ;
+    }
+}
+/* כברירת מחדל, הטקסט למובייל לא יוצג */
+
+.mobile-text {
+  display: none;
+}
+
+
+ /* ברזולוציית מובייל */
+@media (max-width: 768px) {
+    nav{
+       background: none;
+       box-shadow: none;
+    }
+   
+  /* כאשר המסך קטן מ-768px, הצג את כפתור התפריט והסתר את התפריט הראשי */
+  #main-nav {
+    display: none; /* הסתרת התפריט הראשי במצב מובייל */
+    z-index: 1;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 9px;
+  
+  }
+  .flex-container-subjects li {
+    width: calc(50% - 20px); /* במסכים קטנים יותר כל ריבוע ייקח 50% מהרוחב */
+ 
+  }
+
+
+  #nav-button {
+    display: block; /* הצגת כפתור התפריט במצב מובייל */
+    margin: 20px 20px 0 0;
+  }
+
+  /* כאשר התפריט הראשי מוצג (כלומר, הכיתה 'hide-mobile' הוסרה), הצג אותו בצורה אנכית */
+  #main-nav:not(.hide-mobile) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-right: 18px;
+  }
+  .flex-container-nav
+  {
+    background-color: #5C82A1;
+
+  
+  }
+
+
+  
+    /* סגנון לאלמנט הלוגו */
+header .logo-container {
+    margin-left: 0; /* דוחף את הלוגו לצד הימני */
+}
+    .mobile-text {
+        display: block;
+        margin: 5px 0 5px 0;
+
+      }
+      .web-text{
+        display: none;
+        
+      }
+    .popup-content {
+        flex-direction: column; /* חזרה לכיוון עמודה */
+        width: 80%; /* רוחב מתאים למובייל */
+        overflow-y: auto; /* מאפשר גלילה אנכית אם התוכן חורג */
+        max-height: 80vh; /* מגביל את הגובה המרבי של הפופ-אפ ל-80% מגובה המסך */
+        margin: 10px auto; /* מרכז את הפופ-אפ במסך */
+        padding: 28px;
+    }
+    
+    #popup-title, #popup-text {
+        width: 100%; /* רוחב מלא לטקסט */
+        font-size: 16px;
+        line-height: 23px;
+        margin: 0;
+
+
+    }
+
+    #popup-text h3{
+        font-size: 18px;
+        color:#3F6FC6;
+    }
+    
+    #popup-img {
+        width: 100%;
+        margin-bottom: 15px;
+        max-width: 400px;
+    }
+}
+
+/* נעילת הגלילה בזמן שהפופ-אפ פתוח */
+.body-no-scroll {
+    overflow: hidden;
+    height: 100%;
+  }
+
+
+
+@media (max-width: 768px) {
+    .read-more{
+        font-size: smaller;
+    }
+  
+       
+    .title-container   {
+        display: flex;
+        text-align: right;
+   
+        letter-spacing: 0px;
+        color: #5C82A1;
+        opacity: 1;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        flex-direction: column;
+      
+        font: normal normal bold 20px/31px Rubik;
+  
+    }
+
+    #holidays {
+        grid-template-columns: repeat(1, 1fr); /* שני חגים בשורה למסכים צרים */
+    }
+    .gallery-item {
+        position: relative; /* הפיכת ה-gallery-item להיות relative כדי שה-text-content יוכל להיות absolute ביחס אליו */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: stretch;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .gallery-item img {
+        width: 90%;
+        display: block; /* הבטחה שהתמונה תהיה בלוק כדי שהיא תפסה רוחב מלא */
+        border-radius:  10px ;/* עיגול רק על צדדי הימני של האלמנט */
+    }
+
+    .text-content {
+        position: absolute; /* הטקסט יהיה absolute כדי להופיע על התמונה */
+        bottom: 0; /* מיקום הטקסט בתחתית התמונה */
+        box-shadow: 0px 3px 6px #00000029;
+        width: 90%;
+        background-color: rgba(255, 255, 255, 0.725); /* רקע חלקית שקוף לטקסט כדי שהוא יהיה קריא יותר */
+      
+        padding: 10px; /* מרווח פנימי סביב הטקסט */
+        box-sizing: border-box; /* כדי שה-padding לא ישנה את המידות הכוללות */
+        max-width: unset;
+        border-radius:  0 0 10px 10px;
+    }
+
+
+    .text-content h2 {
+        text-align: right;
+        font: normal normal 600 20px/23px Rubik;
+
+    color:#246cc3;
+    opacity: 1;
+    }
+    .text-content p {
+        text-align: right;
+        font: normal normal normal 16px/19px Rubik;
+        
+        color: #000000;
+        opacity: 1;
+    }
+    #clear-filter {
+        display: none;
+        margin-right: 14px;
+    }
+}
+
+
+
+.search-container {
+    display: flex;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+    justify-content: center; /* מרכז את התוכן באופן אופקי */
+    align-items: center; /* מרכז את התוכן באופן אנכי */
+  
+    position: relative; /* הגדרת הקונטיינר כיחסי */
+    padding: 10px; /* מרווח פנימי סביב תיבת החיפוש */
+}
+
+
+#search-input {
+    width: calc(100% - 50px); /* הקטנת הרוחב ב-50px כדי להשאיר מקום לכפתור */
+    padding: 11px;
+    padding-right: 40px; /* מרווח פנימי גדול יותר מהצד הימני */
+    font-size: 16px;
+    border: 0px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 10px;
+    opacity: 1;
+
+}
+
+#search-button {
+    position: absolute;
+    right: 15px; /* הזזה ימינה יותר כדי לא לסתור את הטקסט */
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    color: #333; /* צבע האייקון */
+    margin-right: 5px; /* מרווח מימין לתיבת הטקסט */
+    font-size: 18px; /* גודל האייקון */
+}
+.search-icon{
+    width: 20px; /* גודל האייקון */
+    height: auto; /* שמירה על פרופורציות */
+}
+
+#clear-filter {
+    display: none;
+  
+
+    text-decoration: underline;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+    font-family: 'Rubik';
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    #clear-filter {
+        display: none;
+        margin-right: 242px;
+    }
+    .text-content h2 {
+        text-align: right;
+    font: normal normal 600 30px/36px Rubik;
+    letter-spacing: 0px;
+    color: #246cc3;
+    opacity: 1;
+    }
+    .text-content p {
+        text-align: right;
+        font: normal normal normal 20px/24px Rubik;
+        letter-spacing: 0px;
+        color: black;
+        opacity: 1;
+        line-height: 30px;
+    }
+    .gallery {
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        width: 80%;
+        margin: auto;
+        border-radius: 10px;
+    }
+    .gallery-item img {
+        max-width: 40%; /* מקסימום רוחב של 50% מהקונטיינר */
+        height: auto; /* שמירה על יחסי הגודל של התמונה */
+        border-radius: 0 10px 10px 0; /* עיגול רק על צדדי הימני של האלמנט */
+    }
+
+    @media (min-width: 1920px) {
+        .gallery {
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px #00000029;
+            width: 60%;
+            margin: auto;
+            border-radius: 10px;
+        }
+    
+    }
+}

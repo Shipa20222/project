@@ -1,0 +1,176 @@
+﻿<!doctype html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="utf-8"  />
+    <title>חגי ומועדי ישראל   </title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link href="styles/reset.css" rel="stylesheet" />
+    <link href="styles/styles.css" rel="stylesheet" />
+   
+      <!-- JS -->
+    
+      <script src="jScripts/javascript.js"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+   
+
+</head>
+
+<body>
+   
+
+
+
+    <div class="container">
+    
+        <header>
+      
+   
+            <nav>
+                <button id="nav-button" class="btn-mobile" onclick="toggleNav()"><img src="images/navicon.png"
+                        alt="ניווט"></button>
+                <ul id="main-nav" class="flex-container-nav hide-mobile">
+               
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="#">מתכונים</a></li>
+                    <li><a href="#">אודות</a></li>
+                   
+      
+                </ul>
+            </nav>
+
+
+      
+          
+        </header>
+        <div class="title-container">
+
+            <h1>האתר הרשמי של חגי ומועדי ישראל</h1>
+            </div>
+  
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="חפש חג">
+            <button id="search-button" ><img class="search-icon" src="images/icon.png" alt="חיפוש"></i></button>
+        </div>
+    
+
+        <button id="clear-filter" style="display: none;">נקה סינון</button>
+
+</div>
+
+
+
+
+
+        <div class="gallery">
+
+
+
+
+            <div class="gallery-item">
+                <img src="images/cheesecake.jpg" alt="עוגת גבינה" class="gallery-image">
+                <div class="text-content">
+                    <h2 >מתכון לעוגת גבינה</h2>
+             <p class="web-text"> מתכון לעוגת גבינה שווה במיוחד למי שלא מפחד מאתגרים במטבח!<br>
+                 | זמן הכנה: 60 דק’ | חלבי | רמת קושי: קשה. </p>
+                 <p class="mobile-text">מתכון לעוגת גבינה שווה במיוחד לחג השבועות.</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                
+                <img src="images/shof.jpg" alt="סופגניות">
+                <div class="text-content">
+                    <h2> סופגניות אשל</h2>
+                    <p class="web-text">מתכון לסופגניות אשל רכות, טעימות וקלות להכנה, שישדרו לכם את חג החנוכה!<br>
+                        זמן הכנה 25 דק' | מס' מנות: 30 סופגניות | רמת קושי : קל
+                        </p>
+                        <p class="mobile-text">מתכון לסופגניות אשל רכות וטעימות במיוחד לחנוכה!
+                        </p>
+                </div>
+                
+        </div>
+       
+            <div class="gallery-item">
+                   
+            <img src="images/ozzz.png" alt="אוזני המן">
+                <div class="text-content">
+                <h2  >אוזני המן</h2>
+                <p class="web-text">מתכון לאוזני המן פריכות שלא כדאי לפספס, ויתחסלו תוך שניה!<br>
+                    זמן הכנה: שעתיים | מס' מנות: 35 אוזני המן | רמת קושי : קל | סוג: חלבי
+                    
+                    </p>
+                    <p class="mobile-text">מתכון לאוזני המן פריכות במיוחד שלא כדאי לפספס!
+                    </p>
+    
+        </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/day-passover-.jpg" alt="מתכונים לפסח">
+                <div class="text-content">
+                <h2 >
+                    מתכון לחג פסח
+                    </h2>
+                <p class="web-text">מתכון לבואיקוס (לחמניות מבצק גבינה) טעימים וקלים להכנה - כשר לפסח!<br>
+                    זמן הכנה 10 דק' | זמן אפיה: 25 דק' | מס' מנות: 15 לחמניות | סוג : חלבי
+                    </p>
+                    <p class="mobile-text">מתכון לבואיקוס טעימים וקלים להכנה - כשר לפסח!
+                    </p>
+            </div>
+            </div>
+        
+        </div>
+        <div class="gallery-navigation">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        
+     
+<!-- פופ-אפ (בתחילה מוסתר) -->
+<div id="popup" class="popup" style="display: none;">
+
+    <div class="popup-content">
+        <button id="close-btn" class="close-btn">X</button>
+        
+        <img id="popup-img" src="" alt="תמונת חג" style="float:right;" />
+        <h2 id="popup-title"></h2>
+      
+        <div id="popup-text"></div>
+        
+    </div>
+</div>
+
+
+        <div id="holidays">
+            <!-- גלריות יופיעו כאן דינמית -->
+        </div>
+
+        <footer>
+ 
+    &copy; 2024 כל הזכויות שמורות
+
+        </footer>
+        <!-- פופ-אפ חדש לפוטר -->
+<div id="footerPopupLink" class="popup" style="display: none;">
+    <div id="footerpopup" class="popup-content">
+        <button id="footer-close-btn" class="close-btn">X</button>
+        <p id="popup-text ">כל הזכויות שמורות ל<a href="https://www.freepik.com/" target="https://www.freepik.com/">אתר freepik</a> </p>
+
+    </div>
+</div>
+
+
+</body>
+
+</html>
